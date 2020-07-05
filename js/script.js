@@ -1,3 +1,18 @@
+var colors = [
+    "#7CFC00",
+    "#00FFFF",
+    "gold",
+    "red",
+    "turquoise",
+    "magenta",
+    "pink",
+    "springgreen",
+    "aquamarine",
+    "yellow",
+    "powderblue",
+    "palegreen"
+];
+
 function compararCount(a, b) {
  
   let comparison = 0;
@@ -18,21 +33,6 @@ function compararValor(a, b) {
   }
   return comparison;
 }
-
-var colors = [
-    "#7CFC00",
-    "#00FFFF",
-    "gold",
-    "red",
-    "turquoise",
-    "magenta",
-    "pink",
-    "springgreen",
-    "aquamarine",
-    "yellow",
-    "powderblue",
-    "palegreen"
-];
 
 function montarTabela(data) {
     var table = "<table class='tblDefault'>";
