@@ -197,7 +197,7 @@ function carregarGrafico3(arr, id, total) {
     var tb = document.createElement("table");
     tb.setAttribute('class', 'tblGraph');
     var tr = document.createElement("tr");
-    tr.innerHTML = "<th colspan='2'>Quantidade de Imóveis por Cidade e Valor (em milhões de reais)</th>";
+    tr.innerHTML = "<th colspan='2'>Quantidade de Imóveis por Cidade e Valor em milhões de reais</th>";
     tb.appendChild(tr);
 
     for (i = 0; i<arr.length; i++) {
