@@ -205,7 +205,7 @@ function carregarGrafico3(arr, id, total) {
         var tr = document.createElement("tr");
         var td = document.createElement("td");
         var td2 = document.createElement("td");
-        td.innerHTML = "<div style='height:30px; width: " + x + "px; background-color: deepskyblue;text-align:center;'>" + arr[i]["count"] + "</div>";
+        td.innerHTML = "<div style='height:30px; width: " + x + "px; background-color: dodgerblue;text-align:center;'>" + arr[i]["count"] + "</div>";
         td2.innerHTML = "(" + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRA' }).format(arr[i]["valor"]).substring(4) + ")              " + arr[i]["cidade"];
         tr.appendChild(td);
         tr.appendChild(td2);
