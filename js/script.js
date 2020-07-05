@@ -136,19 +136,16 @@ function gerarDataGrafico3(data) {
     }
     return cidades_count;
 }
-function totalizarDataGrafico1(data) {
+function totalizarDataRegistro(data) {
     return data.length;
 }
-function totalizarDataGrafico2(data) {
+function totalizarDataValor(data) {
     var total = 0;
     for (i = 0; i<data.length; i++) {
         imovel = data[i];
         total += parseFloat(imovel.valorAvaliacao.replace(",", "."));
     }
     return total.toFixed(2);
-}
-function totalizarDataGrafico3(data) {
-    return data.length;
 }
 function carregarGrafico1(arr, id, total) {
 
@@ -227,15 +224,15 @@ function carregarPagina() {
 
         var arr = gerarDataGrafico1(data);
         arr.sort(compararCount).reverse();
-        carregarGrafico1(arr, 'chartContainer1', totalizarDataGrafico1(data));
+        carregarGrafico1(arr, 'chartContainer1', totalizarDataRegistro(data));
 
         arr = gerarDataGrafico2(data);
         arr.sort(compararValor).reverse();
-        carregarGrafico2(arr, 'chartContainer2', totalizarDataGrafico2(data));
+        carregarGrafico2(arr, 'chartContainer2', totalizarDataValor(data));
 
         arr = gerarDataGrafico3(data);
         arr.sort(compararCount).reverse();
-        carregarGrafico3(arr, 'chartContainer3', totalizarDataGrafico3(data));
+        carregarGrafico3(arr, 'chartContainer3', totalizarDataRegistro(data));
         
         return;
     });
