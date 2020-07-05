@@ -27,7 +27,7 @@ body {
     margin: 0.1rem 0rem 0rem 0rem;
     padding: 0.5rem 0rem 0rem 0rem;
     float: left;
-    border: 1px solid #222222;
+    border: 2px solid darkslategray;
     background-color: darkslategray;
     color: white;
     text-align: center;
@@ -39,7 +39,7 @@ body {
     margin: 0.5rem 0rem 0rem 0rem;
     padding: 0;
     float: left;
-    border: 1px solid #222222;
+    border: 2px solid darkslategray;
     background-color: #CCCCCC;
     overflow: auto;
     text-align: center;
@@ -51,7 +51,7 @@ body {
     margin: 0.7rem 0rem 0rem 0rem;
     padding: 0;
     float: left;
-    border: 1px solid black;
+    border: 2px solid darkslategray;
     background-color: #CCCCCC;
     overflow: auto;
     text-align: center;
@@ -83,7 +83,7 @@ table td {
 .tblDefault {
     margin: 0.5rem 1rem 0.5rem 1rem;
     padding: 0px 0px 0px 0px; 
-    border: 2px solid black;
+    border: 2px solid darkslategray;
     font-weight: normal;
     width: 98%;
 }
