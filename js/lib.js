@@ -1,0 +1,1 @@
+var colors=["#7CFC00","#00FFFF","gold","red","turquoise","magenta","pink","springgreen","aquamarine","yellow","powderblue","palegreen"];function compararCount(r,o){let n=0;return r.count>o.count?n=1:r.count<o.count&&(n=-1),n}function compararValor(r,o){let n=0;return r.valor>o.valor?n=1:r.valor<o.valor&&(n=-1),n}
