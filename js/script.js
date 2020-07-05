@@ -1,6 +1,6 @@
 
 function montarTabela(data) {
-    var table = "<table class='tblDefault'>";
+    let table = "<table class='tblDefault'>";
     table += "<tr>" +
         "<th>Endereço</th>" +
         "<th>Bairro</th>" +
@@ -35,17 +35,17 @@ function montarTabela(data) {
 
 function gerarDataGrafico1(data) {
     
-    var modalidades = [];
-    var modalidades_count = [];
-    for (i = 0; i<data.length; i++) {
+    let modalidades = [];
+    let modalidades_count = [];
+    for (let i = 0; i<data.length; i++) {
         imovel = data[i];
         v = parseFloat(imovel.valorAvaliacao.replace(",", "."));
         if (!modalidades.includes(imovel.modalidadeVenda)) {
             modalidades.push(imovel.modalidadeVenda);
-            var obj = {"modalidade":imovel.modalidadeVenda, "count":1, "valor":v};
+            let obj = {"modalidade":imovel.modalidadeVenda, "count":1, "valor":v};
             modalidades_count.push(obj);
         } else {
-            for (j=0; j<modalidades_count.length; j++) {
+            for (let j=0; j<modalidades_count.length; j++) {
                 if (modalidades_count[j]["modalidade"] === imovel.modalidadeVenda) {
                     modalidades_count[j]["count"]++;
                     modalidades_count[j]["valor"] +=  v;
@@ -58,18 +58,18 @@ function gerarDataGrafico1(data) {
 
 function gerarDataGrafico2(data) {
     
-    var modalidades = [];
-    var modalidades_count = [];
-    var total = 0;
-    for (i = 0; i<data.length; i++) {
+    let modalidades = [];
+    let modalidades_count = [];
+    let total = 0;
+    for (let i = 0; i<data.length; i++) {
         imovel = data[i];
         v = parseFloat(imovel.valorAvaliacao.replace(",", "."));
         if (!modalidades.includes(imovel.modalidadeVenda)) {
             modalidades.push(imovel.modalidadeVenda);
-            var obj = {"modalidade":imovel.modalidadeVenda, "count":1, "valor":v};
+            let obj = {"modalidade":imovel.modalidadeVenda, "count":1, "valor":v};
             modalidades_count.push(obj);
         } else {
-            for (j=0; j<modalidades_count.length; j++) {
+            for (let j=0; j<modalidades_count.length; j++) {
                 if (modalidades_count[j]["modalidade"] === imovel.modalidadeVenda) {
                     modalidades_count[j]["count"]++;
                     modalidades_count[j]["valor"] +=  v;
@@ -81,17 +81,17 @@ function gerarDataGrafico2(data) {
 }
 function gerarDataGrafico3(data) {
     
-    var cidades = [];
-    var cidades_count = [];
-    for (i = 0; i<data.length; i++) {
+    let cidades = [];
+    let cidades_count = [];
+    for (let i = 0; i<data.length; i++) {
         imovel = data[i];
         v = parseFloat(imovel.valorAvaliacao.replace(",", "."));
         if (!cidades.includes(imovel.cidade)) {
             cidades.push(imovel.cidade);
-            var obj = {"cidade":imovel.cidade, "count":1, "valor":v};
+            let obj = {"cidade":imovel.cidade, "count":1, "valor":v};
             cidades_count.push(obj);
         } else {
-            for (j=0; j<cidades.length; j++) {
+            for (let j=0; j<cidades.length; j++) {
                 if (cidades_count[j]["cidade"] === imovel.cidade) {
                     cidades_count[j]["count"]++;
                     cidades_count[j]["valor"] +=  v;
@@ -105,8 +105,8 @@ function totalizarDataRegistro(data) {
     return data.length;
 }
 function totalizarDataValor(data) {
-    var total = 0;
-    for (i = 0; i<data.length; i++) {
+    let total = 0;
+    for (let i = 0; i<data.length; i++) {
         imovel = data[i];
         total += parseFloat(imovel.valorAvaliacao.replace(",", "."));
     }
@@ -114,17 +114,17 @@ function totalizarDataValor(data) {
 }
 function carregarGrafico1(arr, id, total) {
 
-    var tb = document.createElement("table");
+    let tb = document.createElement("table");
     tb.setAttribute('class', 'tblGraph');
-    var tr = document.createElement("tr");
+    let tr = document.createElement("tr");
     tr.innerHTML = "<th colspan='2'>Quantidade de Imóveis por Modalidade de Venda</th>";
     tb.appendChild(tr);
 
-    for (i = 0; i<arr.length; i++) {
-        var x = Math.ceil((arr[i]["count"] * 500)/total);
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        var td2 = document.createElement("td");
+    for (let i = 0; i<arr.length; i++) {
+        let x = Math.ceil((arr[i]["count"] * 500)/total);
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        let td2 = document.createElement("td");
         td.innerHTML = "<div style='height:30px; width: "+x+"px; background-color:"+colors[i]+";text-align:center;'>"+arr[i]["count"]+"</div>";
         td2.innerHTML = arr[i]["modalidade"];
         tr.appendChild(td);
@@ -136,18 +136,18 @@ function carregarGrafico1(arr, id, total) {
 }
 function carregarGrafico2(arr, id, total) {
 
-    var tb = document.createElement("table");
+    let tb = document.createElement("table");
     tb.setAttribute('class', 'tblGraph');
-    var tr = document.createElement("tr");
+    let tr = document.createElement("tr");
     tr.innerHTML = "<th colspan='2'>Valor Total de Imóveis por Modalidade de Venda (em milhões de reais)</th>";
     tb.appendChild(tr);
 
-    for (i = 0; i<arr.length; i++) {
-        var x = Math.ceil((arr[i]["valor"] * 500)/total);
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        var td2 = document.createElement("td");
-        var vf = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRA' }).format(arr[i]["valor"].toFixed(2)).substring(4)
+    for (let i = 0; i<arr.length; i++) {
+        let x = Math.ceil((arr[i]["valor"] * 500)/total);
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        let td2 = document.createElement("td");
+        let vf = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRA' }).format(arr[i]["valor"].toFixed(2)).substring(4)
         td.innerHTML = "<div style='height:30px; width: "+x+"px; background-color:"+colors[i]+";text-align:center;'>"+vf+"</div>";
         td2.innerHTML = arr[i]["modalidade"];
         tr.appendChild(td);
@@ -159,17 +159,17 @@ function carregarGrafico2(arr, id, total) {
 }
 function carregarGrafico3(arr, id, total) {
 
-    var tb = document.createElement("table");
+    let tb = document.createElement("table");
     tb.setAttribute('class', 'tblGraph');
-    var tr = document.createElement("tr");
+    let tr = document.createElement("tr");
     tr.innerHTML = "<th colspan='2'>Quantidade de Imóveis por Cidade e Valor em milhões de reais</th>";
     tb.appendChild(tr);
 
-    for (i = 0; i<arr.length; i++) {
-        var x = Math.ceil((arr[i]["count"] * 800)/total);
-        var tr = document.createElement("tr");
-        var td = document.createElement("td");
-        var td2 = document.createElement("td");
+    for (let i = 0; i<arr.length; i++) {
+        let x = Math.ceil((arr[i]["count"] * 800)/total);
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        let td2 = document.createElement("td");
         td.innerHTML = "<div style='height:30px; width: " + x + "px; background-color: dodgerblue;text-align:center;'>" + arr[i]["count"] + "</div>";
         td2.innerHTML = "(" + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRA' }).format(arr[i]["valor"]).substring(4) + ")              " + arr[i]["cidade"];
         tr.appendChild(td);
@@ -180,14 +180,14 @@ function carregarGrafico3(arr, id, total) {
      document.getElementById(id).appendChild(tb);
 }
 function carregarPagina() {
-    var result = null;
+    let result = null;
     $.getJSON( "json/imoveis.json", function(data) {
-        var result = null;
+        let result = null;
         $.each( data, function(key, val) {});
 
         montarTabela(data);  
 
-        var arr = gerarDataGrafico1(data);
+        let arr = gerarDataGrafico1(data);
         arr.sort(compararCount).reverse();
         carregarGrafico1(arr, 'chartContainer1', totalizarDataRegistro(data));
 
